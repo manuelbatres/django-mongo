@@ -76,8 +76,16 @@ WSGI_APPLICATION = 'mongo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo',
+        'NAME': 'base',
+        'CLIENT': {
+                'host': 'localhost',
+                'port': 27017,
+                'username': 'superuser',
+                'password': '12345678',
+                'authSource': 'admin',
+                'authMechanism': 'SCRAM-SHA-1'
+            }
     }
 }
 
