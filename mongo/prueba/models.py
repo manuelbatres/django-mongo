@@ -2,6 +2,7 @@ from djongo import models
 
 # Create your models here.
 class Usuario(models.Model):
+    _id = models.ObjectIdField(default='666f6f2d6261722d71757578')
     ident = models.IntegerField()
     UserName = models.CharField(max_length=100)
     Password = models.CharField(max_length=100)
@@ -10,14 +11,7 @@ class Usuario(models.Model):
     id_H_Descargas = models.IntegerField()
     id_Publicacion = models.IntegerField()
     id_PDR = models.IntegerField()
-
-    class Meta:
-        abstract = True
-    
-class Entry(models.Model):
-    _id = models.ObjectIdField()
-    usuario = models.EmbeddedField(
-        model_container=Usuario,
-    )
-    headline = models.CharField(max_length=255)    
     objects = models.DjongoManager()
+
+    
+
