@@ -21,4 +21,5 @@ from prueba import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', views.user, name='user'),
+    path('register/', views.registerPage, name="register"),
 ]
